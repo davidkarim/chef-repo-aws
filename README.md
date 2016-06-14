@@ -13,6 +13,7 @@ In summary, the steps were:
 * Download Starter kit from Chef Server which contains AWS connectivity parameters for workstation.
 * Configure workstation (my laptop) with Chef tools. Configure knife.rb file with updated DNS name. Validated connectivity to server via knife client list
 * Configured initial recipe to do apt-get update daily, install apache, and loaded HTML template
+* HTML template is an erb file (embedded Ruby syntax) located [here](cookbooks/learn_chef_apache2/templates/default/index.html.erb)
 * See recipe [here](cookbooks/learn_chef_apache2/recipes/default.rb)
 * Date of exercise: June 13, 2016
 
