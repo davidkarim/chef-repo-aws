@@ -6,8 +6,10 @@ This is an exercise to demo Chef scripting for my interview. In summary, the ste
 * Configure server with an initial organization called david
 * Download Starter kit from Chef Server which contains AWS connectivity parameters.
 * Configure workstation (my laptop) with Chef tools. Configure knife.rb file with updated DNS name. Validated connectivity to server via knife client list
-* Configured initial recipe to do apt-get update daily, install apache, and load this template
+* Configured initial recipe to do apt-get update daily, install apache, and loaded HTML template
 * Date of exercise: June 13, 2016
+
+The server that was deployed with this exercise is live at: http://ec2-54-175-32-111.compute-1.amazonaws.com
 
 Tail end of results of `knife bootstrap` command:
 ![First Image](images/chef_scr_grab.png)
