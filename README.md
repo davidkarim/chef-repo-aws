@@ -1,12 +1,19 @@
 Chef-Repo Exercise on AWS
 ===============
-This is an exercise to demo Chef scripting for my interview. In summary, the steps were:
+This is an exercise to demo Chef scripting for my interview. The list of requirements before starting:
 
-* Create an EC2 Chef Server instance and connect to it via web UI and SSH (needed to validate node name)
+* Development environment with Ruby, AWS CLI tools, Chef SDK
+* AWS account with properly configured IAM settings (AWS Marketplace_full_access role), publicly accessible VPC, and EC2 policies.
+* Chef Server AMI license obtained via AWS Marketplace
+
+In summary, the steps were:
+
+* Create an EC2 Chef Server instance and connect to it via web UI and SSH (needed to validate node name of server)
 * Configure server with an initial organization called david
-* Download Starter kit from Chef Server which contains AWS connectivity parameters.
+* Download Starter kit from Chef Server which contains AWS connectivity parameters for workstation.
 * Configure workstation (my laptop) with Chef tools. Configure knife.rb file with updated DNS name. Validated connectivity to server via knife client list
 * Configured initial recipe to do apt-get update daily, install apache, and loaded HTML template
+* See recipe [here](cookbooks/learn_chef_apache2/recipes/default.rb)
 * Date of exercise: June 13, 2016
 
 The server that was deployed with this exercise is live at: http://ec2-54-175-32-111.compute-1.amazonaws.com
