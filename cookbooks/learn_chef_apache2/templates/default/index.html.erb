@@ -19,5 +19,13 @@
       </li>
       <li>Date of exercise: June 13, 2016</li>
     </ul>
+
+    <p>Note: if viewing via load-balancer DNS, reload page to confirm values below change.</p>
+    <h2>Node-Specific Attributes</h2>
+    <p>Platform: <%= node['platform'] %></p>
+    <p>Platform version: <%= node['platform_version'] %></p>
+    <p>Host Name: <%= node['hostname'] %></p>
+    <p>IP Address: <%= node['ipaddress'] %></p>
+    <p>Domain name: <%= node['fqdn'] %></p>
   </body>
 </html>
