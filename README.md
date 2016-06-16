@@ -13,11 +13,17 @@ In summary, the steps were:
 * Download Starter kit from Chef Server which contains AWS connectivity parameters for workstation.
 * Configure workstation (my laptop) with Chef tools. Configure knife.rb file with updated DNS name. Validated connectivity to server via knife client list
 * Configured initial recipe to do apt-get update daily, install apache, and loaded HTML template
+* Upload recipe to Chef server
 * HTML template is an erb file (embedded Ruby syntax) located [here](cookbooks/learn_chef_apache2/templates/default/index.html.erb)
 * See recipe [here](cookbooks/learn_chef_apache2/recipes/default.rb)
-* Date of exercise: June 13, 2016
+* For phase 2, created an AWS launch script to launch infrastructure via AWS SDK; located [here](aws/launch_script.sh)
+* Script result was redirected to [this file](aws/response.txt)
+* Phase 1 of exercise (Chef server and script): June 13, 2016
+* Phase 2 of exercise (Full automation with bash script and AWS CLI): June 16, 2016
 
-The server that was deployed with this exercise is live at: http://ec2-54-175-32-111.compute-1.amazonaws.com
+The infrastructure that was deployed with this exercise is live at: http://dk-load-balancer-1815739007.us-east-1.elb.amazonaws.com/
+
+Note: when visiting the link above, you'll be connected to the elastic load balancer. Reloading the page will show node-specific attributes for each server, thus validating load balancer is distributing load across the two servers.
 
 Tail end of results of `knife bootstrap` command:
 ![First Image](images/chef_scr_grab.png)

@@ -30,7 +30,7 @@ echo "Wait 60 more seconds..."
 sleep 60s
 
 # Associate ELB to EC2 instances and ping instances
-echo "Adding instances to ELB and validating response from instances..."
+echo "**** Adding instances to ELB and validating response from instances..."
 for i in `seq 0 1`;
 do
 	aws elb register-instances-with-load-balancer --load-balancer-name $loadBalancerName --instances ${arrayInstances[i]}
@@ -38,7 +38,16 @@ do
 done
 
 # Validating ELB response
-echo "Validating ELB response..."
+echo "**** Validating ELB response..."
 ping -c 2 $elbDns
 
-echo "** Script ended normally. Goodbye.**"
+# Bootstrap nodes though Chef recipes
+echo "**** Bootstrapping nodes with Chef..."
+for i in `seq 0 1`;
+do
+	knife bootstrap ${arrayUrls[i]} --ssh-user ubuntu --sudo --identity-file ~/Documents/First_Key.pem --node-name node$i --run-list 'recipe[learn_chef_apache2]'
+done
+
+echo 'Navigate to Load balancer DNS to test:' $elbDns
+echo
+echo "**** Script ended normally. Goodbye. ****"
