@@ -1,0 +1,980 @@
+Instance ID:  i-c1f42e39
+Instance URL:  ec2-52-91-144-109.compute-1.amazonaws.com
+
+Instance ID:  i-71f72d89
+Instance URL:  ec2-54-152-81-82.compute-1.amazonaws.com
+
+Load balancer DNS: dk-load-balancer-1815739007.us-east-1.elb.amazonaws.com
+Waiting for instances to initiate...
+Please wait for two more minutes...
+Wait 60 more seconds...
+**** Adding instances to ELB and validating response from instances...
+{
+    "Instances": [
+        {
+            "InstanceId": "i-c1f42e39"
+        }
+    ]
+}
+PING ec2-52-91-144-109.compute-1.amazonaws.com (52.91.144.109): 56 data bytes
+64 bytes from 52.91.144.109: icmp_seq=0 ttl=44 time=46.437 ms
+64 bytes from 52.91.144.109: icmp_seq=1 ttl=44 time=39.135 ms
+
+--- ec2-52-91-144-109.compute-1.amazonaws.com ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 39.135/42.786/46.437/3.651 ms
+{
+    "Instances": [
+        {
+            "InstanceId": "i-c1f42e39"
+        }, 
+        {
+            "InstanceId": "i-71f72d89"
+        }
+    ]
+}
+PING ec2-54-152-81-82.compute-1.amazonaws.com (54.152.81.82): 56 data bytes
+64 bytes from 54.152.81.82: icmp_seq=0 ttl=46 time=34.804 ms
+64 bytes from 54.152.81.82: icmp_seq=1 ttl=46 time=227.549 ms
+
+--- ec2-54-152-81-82.compute-1.amazonaws.com ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 34.804/131.177/227.549/96.373 ms
+**** Validating ELB response...
+PING dk-load-balancer-1815739007.us-east-1.elb.amazonaws.com (52.71.231.156): 56 data bytes
+64 bytes from 52.71.231.156: icmp_seq=0 ttl=41 time=33.490 ms
+64 bytes from 52.71.231.156: icmp_seq=1 ttl=41 time=35.410 ms
+
+--- dk-load-balancer-1815739007.us-east-1.elb.amazonaws.com ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 33.490/34.450/35.410/0.960 ms
+**** Bootstrapping nodes with Chef...
+ec2-52-91-144-109.compute-1.amazonaws.com -----> Installing Chef Omnibus (-v 12)
+ec2-52-91-144-109.compute-1.amazonaws.com downloading https://omnitruck-direct.chef.io/chef/install.sh
+ec2-52-91-144-109.compute-1.amazonaws.com   to file /tmp/install.sh.1327/install.sh
+ec2-52-91-144-109.compute-1.amazonaws.com trying wget...
+ec2-52-91-144-109.compute-1.amazonaws.com ubuntu 14.04 x86_64
+ec2-52-91-144-109.compute-1.amazonaws.com Getting information for chef stable 12 for ubuntu...
+ec2-52-91-144-109.compute-1.amazonaws.com downloading https://omnitruck-direct.chef.io/stable/chef/metadata?v=12&p=ubuntu&pv=14.04&m=x86_64
+ec2-52-91-144-109.compute-1.amazonaws.com   to file /tmp/install.sh.1331/metadata.txt
+ec2-52-91-144-109.compute-1.amazonaws.com trying wget...
+ec2-52-91-144-109.compute-1.amazonaws.com sha1	bc4a6642d6093b54de856da31f0651a56b0fdc8e
+ec2-52-91-144-109.compute-1.amazonaws.com sha256	f1cf5d0f6dd12d2d2296ec6d8dbb16363f8541f5c15298cafa70e65ff2b5a22f
+ec2-52-91-144-109.compute-1.amazonaws.com url	https://packages.chef.io/stable/ubuntu/14.04/chef_12.11.18-1_amd64.deb
+ec2-52-91-144-109.compute-1.amazonaws.com version	12.11.18
+ec2-52-91-144-109.compute-1.amazonaws.com downloaded metadata file looks valid...
+ec2-52-91-144-109.compute-1.amazonaws.com downloading https://packages.chef.io/stable/ubuntu/14.04/chef_12.11.18-1_amd64.deb
+ec2-52-91-144-109.compute-1.amazonaws.com   to file /tmp/install.sh.1331/chef_12.11.18-1_amd64.deb
+ec2-52-91-144-109.compute-1.amazonaws.com trying wget...
+ec2-52-91-144-109.compute-1.amazonaws.com Comparing checksum with sha256sum...
+ec2-52-91-144-109.compute-1.amazonaws.com Installing chef 12
+ec2-52-91-144-109.compute-1.amazonaws.com installing with dpkg...
+ec2-52-91-144-109.compute-1.amazonaws.com Selecting previously unselected package chef.
+ec2-52-91-144-109.compute-1.amazonaws.com (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51150 files and directories currently installed.)
+ec2-52-91-144-109.compute-1.amazonaws.com Preparing to unpack .../chef_12.11.18-1_amd64.deb ...
+ec2-52-91-144-109.compute-1.amazonaws.com Unpacking chef (12.11.18-1) ...
+ec2-52-91-144-109.compute-1.amazonaws.com Setting up chef (12.11.18-1) ...
+ec2-52-91-144-109.compute-1.amazonaws.com Thank you for installing Chef!
+ec2-52-91-144-109.compute-1.amazonaws.com Starting the first Chef Client run...
+ec2-52-91-144-109.compute-1.amazonaws.com Starting Chef Client, version 12.11.18[0m
+ec2-52-91-144-109.compute-1.amazonaws.com Creating a new client identity for node0 using the validator key.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com resolving cookbooks for run list: ["learn_chef_apache2"][0m
+ec2-52-91-144-109.compute-1.amazonaws.com Synchronizing Cookbooks:[0m
+ec2-52-91-144-109.compute-1.amazonaws.com   - learn_chef_apache2 (0.3.0)[0m
+ec2-52-91-144-109.compute-1.amazonaws.com Installing Cookbook Gems:[0m
+ec2-52-91-144-109.compute-1.amazonaws.com Compiling Cookbooks...[0m
+ec2-52-91-144-109.compute-1.amazonaws.com Converging 4 resources[0m
+ec2-52-91-144-109.compute-1.amazonaws.com Recipe: learn_chef_apache2::default[0m
+ec2-52-91-144-109.compute-1.amazonaws.com   * apt_update[Update the apt cache daily] action periodic
+ec2-52-91-144-109.compute-1.amazonaws.com     [32m- update new lists of packages[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     * directory[/var/lib/apt/periodic] action create (up to date)
+ec2-52-91-144-109.compute-1.amazonaws.com     * directory[/etc/apt/apt.conf.d] action create (up to date)
+ec2-52-91-144-109.compute-1.amazonaws.com     * file[/etc/apt/apt.conf.d/15update-stamp] action create_if_missing (up to date)
+ec2-52-91-144-109.compute-1.amazonaws.com     * execute[apt-get -q update] action run
+ec2-52-91-144-109.compute-1.amazonaws.com       [32m- execute apt-get -q update[0m
+ec2-52-91-144-109.compute-1.amazonaws.com [0m  
+ec2-52-91-144-109.compute-1.amazonaws.com [0m  * apt_package[apache2] action install
+ec2-52-91-144-109.compute-1.amazonaws.com     [32m- install version 2.4.7-1ubuntu4.9 of package apache2[0m
+ec2-52-91-144-109.compute-1.amazonaws.com [0m  * service[apache2] action enable (up to date)
+ec2-52-91-144-109.compute-1.amazonaws.com   * service[apache2] action start (up to date)
+ec2-52-91-144-109.compute-1.amazonaws.com   * template[/var/www/html/index.html] action create
+ec2-52-91-144-109.compute-1.amazonaws.com     [32m- update content in file /var/www/html/index.html from 538f31 to 29a855[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m--- /var/www/html/index.html	2016-06-16 16:32:31.603517000 +0000[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+++ /var/www/html/.chef-index.html20160616-1416-qj97on	2016-06-16 16:32:35.535517000 +0000[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m@@ -1,379 +1,33 @@[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-<html xmlns="http://www.w3.org/1999/xhtml">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  <!--[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    Modified from the Debian original for Ubuntu[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    Last updated: 2014-03-19[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    See: https://launchpad.net/bugs/1288690[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  -->[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  <head>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    <title>Apache2 Ubuntu Default Page: It works</title>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    <style type="text/css" media="screen">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  * {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin: 0px 0px 0px 0px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    padding: 0px 0px 0px 0px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  body, html {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    padding: 3px 3px 3px 3px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #D8DBE2;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    font-family: Verdana, sans-serif;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    font-size: 11pt;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    text-align: center;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.main_page {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    position: relative;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    display: table;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    width: 800px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin-bottom: 3px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin-left: auto;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin-right: auto;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    padding: 0px 0px 0px 0px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    border-width: 2px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    border-color: #212738;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    border-style: solid;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #FFFFFF;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    text-align: center;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.page_header {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    height: 99px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    width: 100%;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #F5F6F7;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.page_header span {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin: 15px 0px 0px 50px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    font-size: 180%;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    font-weight: bold;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.page_header img {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin: 3px 0px 0px 40px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    border: 0px 0px 0px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.table_of_contents {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    clear: left;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    min-width: 200px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin: 3px 3px 3px 3px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #FFFFFF;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    text-align: left;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.table_of_contents_item {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    clear: left;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    width: 100%;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin: 4px 0px 0px 0px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #FFFFFF;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    color: #000000;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    text-align: left;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin: 6px 0px 0px 6px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.content_section {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin: 3px 3px 3px 3px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #FFFFFF;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    text-align: left;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.content_section_text {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    padding: 4px 8px 4px 8px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    color: #000000;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    font-size: 100%;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.content_section_text pre {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin: 8px 0px 8px 0px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    padding: 8px 8px 8px 8px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    border-width: 1px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    border-style: dotted;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    border-color: #000000;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #F5F6F7;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    font-style: italic;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.content_section_text p {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    margin-bottom: 6px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.content_section_text ul, div.content_section_text li {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    padding: 4px 8px 4px 16px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.section_header {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    padding: 3px 6px 3px 6px;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #8E9CB2;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    color: #FFFFFF;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    font-weight: bold;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    font-size: 112%;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    text-align: center;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.section_header_red {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #CD214F;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.section_header_grey {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #9F9386;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  .floating_element {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    position: relative;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    float: left;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.content_section_text a {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    text-decoration: none;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    font-weight: bold;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a:link,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a:visited,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a:active {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    color: #000000;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a:hover {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #000000;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    color: #FFFFFF;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.content_section_text a:link,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.content_section_text a:visited,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-   div.content_section_text a:active {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #DCDFE6;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    color: #000000;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.content_section_text a:hover {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    background-color: #000000;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    color: #DCDFE6;[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  div.validator {[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  }[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    </style>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-  </head>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+<html>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m   <body>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    <div class="main_page">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-      <div class="page_header floating_element">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <img src="/icons/ubuntu-logo.png" alt="Ubuntu Logo" class="floating_element"/>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <span class="floating_element">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          Apache2 Ubuntu Default Page[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </span>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-      </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-<!--      <div class="table_of_contents floating_element">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="section_header section_header_grey">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          TABLE OF CONTENTS[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="table_of_contents_item floating_element">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <a href="#about">About</a>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="table_of_contents_item floating_element">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <a href="#changes">Changes</a>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="table_of_contents_item floating_element">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <a href="#scope">Scope</a>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="table_of_contents_item floating_element">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <a href="#files">Config files</a>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-      </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m--->[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-      <div class="content_section floating_element">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <h1>This was initiated via Chef Script</h1>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <h2>Exercise to demo scripting for Citrix interview</h2>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <p>General steps were:</p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <ul>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      <li>Create an EC2 Chef Server instance and connect to it via web UI and SSH (needed to validate node name)</li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      <li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+        Configure server with an initial organization called david[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      </li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      <li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+        Download Starter kit from Chef Server which contains AWS connectivity parameters.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      </li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      <li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+        Configure workstation (my laptop) with Chef tools. Configure knife.rb file with updated DNS name. Validated connectivity to server via knife client list[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      </li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      <li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+        Configured initial recipe to do apt-get update daily, install apache, and load this template[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      </li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      <li>Phase 1 of exercise (Chef server and script): June 13, 2016</li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+      <li>Phase 2 of exercise (Full automation with bash script and AWS CLI): June 16, 2016</li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    </ul>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m [0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="section_header section_header_red">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <div id="about"></div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          It works![0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="content_section_text">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                This is the default welcome page used to test the correct [0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                operation of the Apache2 server after installation on Ubuntu systems.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                It is based on the equivalent page on Debian, from which the Ubuntu Apache[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                packaging is derived.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                If you can read this page, it means that the Apache HTTP server installed at[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                this site is working properly. You should <b>replace this file</b> (located at[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                If you are a normal user of this web site and don't know what this page is[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                about, this probably means that the site is currently unavailable due to[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                maintenance.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                If the problem persists, please contact the site's administrator.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="section_header">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <div id="changes"></div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                Configuration Overview[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="content_section_text">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                Ubuntu's Apache2 default configuration is different from the[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                upstream default configuration, and split into several files optimized for[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                interaction with Ubuntu tools. The configuration system is[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                <b>fully documented in[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                documentation. Documentation for the web server itself can be[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                found by accessing the <a href="/manual">manual</a> if the <tt>apache2-doc</tt>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                package was installed on this server.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                The configuration layout for an Apache2 web server installation on Ubuntu systems is as follows:[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <pre>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-/etc/apache2/[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-|-- apache2.conf[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-|       `--  ports.conf[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-|-- mods-enabled[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-|       |-- *.load[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-|       `-- *.conf[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-|-- conf-enabled[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-|       `-- *.conf[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-|-- sites-enabled[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-|       `-- *.conf[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          </pre>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <ul>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           <tt>apache2.conf</tt> is the main configuration[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           file. It puts the pieces together by including all remaining configuration[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           files when starting up the web server.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           <tt>ports.conf</tt> is always included from the[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           main configuration file. It is used to determine the listening ports for[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           incoming connections, and this file can be customized anytime.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           Configuration files in the <tt>mods-enabled/</tt>,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           particular configuration snippets which manage modules, global configuration[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           fragments, or virtual host configurations, respectively.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           They are activated by symlinking available[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           configuration files from their respective[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           *-available/ counterparts. These should be managed[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           by using our helpers[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           <tt>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enmod">a2enmod</a>,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dismod">a2dismod</a>,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           </tt>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           <tt>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2ensite">a2ensite</a>,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dissite">a2dissite</a>,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                            </tt>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                                and[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           <tt>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enconf">a2enconf</a>,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2disconf">a2disconf</a>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           </tt>. See their respective man pages for detailed information.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           The binary is called apache2. Due to the use of[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           environment variables, in the default configuration, apache2 needs to be[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           <b>Calling <tt>/usr/bin/apache2</tt> directly will not work</b> with the[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                           default configuration.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          </ul>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="section_header">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-            <div id="docroot"></div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                Document Roots[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="content_section_text">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-            <p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                By default, Ubuntu does not allow access through the web browser to[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                <em>any</em> file apart of those located in <tt>/var/www</tt>,[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                <a href="http://httpd.apache.org/docs/2.4/mod/mod_userdir.html">public_html</a>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                directories (when enabled) and <tt>/usr/share</tt> (for web[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                applications). If your site is using a web document root[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                document root directory in <tt>/etc/apache2/apache2.conf</tt>.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-            </p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-            <p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                The default Ubuntu document root is <tt>/var/www/html</tt>. You[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                can make your own virtual hosts under /var/www. This is different[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                to previous releases which provides better security out of the box.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-            </p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="section_header">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <div id="bugs"></div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                Reporting Problems[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        <div class="content_section_text">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                Please use the <tt>ubuntu-bug</tt> tool to report bugs in the[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                Apache2 package with Ubuntu. However, check <a[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                href="https://bugs.launchpad.net/ubuntu/+source/apache2">existing[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                bug reports</a> before reporting a new bug.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                Please report bugs specific to modules (such as PHP and others)[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-                to respective packages, not to the web server itself.[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-      </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    <div class="validator">[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    <p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-      <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    </p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-    </div>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <p>Note: if viewing via load-balancer DNS, reload page to confirm values below change.</p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <h2>Node-Specific Attributes</h2>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <p>Platform: ubuntu</p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <p>Platform version: 14.04</p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <p>Host Name: ip-10-0-1-86</p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <p>IP Address: 10.0.1.86</p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m+    <p>Domain name: ip-10-0-1-86.ec2.internal</p>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m   </body>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m </html>[0m
+ec2-52-91-144-109.compute-1.amazonaws.com     [37m-[0m
+ec2-52-91-144-109.compute-1.amazonaws.com [0m[0m
+ec2-52-91-144-109.compute-1.amazonaws.com Running handlers:[0m
+ec2-52-91-144-109.compute-1.amazonaws.com Running handlers complete
+ec2-52-91-144-109.compute-1.amazonaws.com [0mChef Client finished, 4/9 resources updated in 18 seconds[0m
+ec2-54-152-81-82.compute-1.amazonaws.com -----> Installing Chef Omnibus (-v 12)
+ec2-54-152-81-82.compute-1.amazonaws.com downloading https://omnitruck-direct.chef.io/chef/install.sh
+ec2-54-152-81-82.compute-1.amazonaws.com   to file /tmp/install.sh.1327/install.sh
+ec2-54-152-81-82.compute-1.amazonaws.com trying wget...
+ec2-54-152-81-82.compute-1.amazonaws.com ubuntu 14.04 x86_64
+ec2-54-152-81-82.compute-1.amazonaws.com Getting information for chef stable 12 for ubuntu...
+ec2-54-152-81-82.compute-1.amazonaws.com downloading https://omnitruck-direct.chef.io/stable/chef/metadata?v=12&p=ubuntu&pv=14.04&m=x86_64
+ec2-54-152-81-82.compute-1.amazonaws.com   to file /tmp/install.sh.1331/metadata.txt
+ec2-54-152-81-82.compute-1.amazonaws.com trying wget...
+ec2-54-152-81-82.compute-1.amazonaws.com sha1	bc4a6642d6093b54de856da31f0651a56b0fdc8e
+ec2-54-152-81-82.compute-1.amazonaws.com sha256	f1cf5d0f6dd12d2d2296ec6d8dbb16363f8541f5c15298cafa70e65ff2b5a22f
+ec2-54-152-81-82.compute-1.amazonaws.com url	https://packages.chef.io/stable/ubuntu/14.04/chef_12.11.18-1_amd64.deb
+ec2-54-152-81-82.compute-1.amazonaws.com version	12.11.18
+ec2-54-152-81-82.compute-1.amazonaws.com downloaded metadata file looks valid...
+ec2-54-152-81-82.compute-1.amazonaws.com downloading https://packages.chef.io/stable/ubuntu/14.04/chef_12.11.18-1_amd64.deb
+ec2-54-152-81-82.compute-1.amazonaws.com   to file /tmp/install.sh.1331/chef_12.11.18-1_amd64.deb
+ec2-54-152-81-82.compute-1.amazonaws.com trying wget...
+ec2-54-152-81-82.compute-1.amazonaws.com Comparing checksum with sha256sum...
+ec2-54-152-81-82.compute-1.amazonaws.com Installing chef 12
+ec2-54-152-81-82.compute-1.amazonaws.com installing with dpkg...
+ec2-54-152-81-82.compute-1.amazonaws.com Selecting previously unselected package chef.
+ec2-54-152-81-82.compute-1.amazonaws.com (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 51150 files and directories currently installed.)
+ec2-54-152-81-82.compute-1.amazonaws.com Preparing to unpack .../chef_12.11.18-1_amd64.deb ...
+ec2-54-152-81-82.compute-1.amazonaws.com Unpacking chef (12.11.18-1) ...
+ec2-54-152-81-82.compute-1.amazonaws.com Setting up chef (12.11.18-1) ...
+ec2-54-152-81-82.compute-1.amazonaws.com Thank you for installing Chef!
+ec2-54-152-81-82.compute-1.amazonaws.com Starting the first Chef Client run...
+ec2-54-152-81-82.compute-1.amazonaws.com Starting Chef Client, version 12.11.18[0m
+ec2-54-152-81-82.compute-1.amazonaws.com Creating a new client identity for node1 using the validator key.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com resolving cookbooks for run list: ["learn_chef_apache2"][0m
+ec2-54-152-81-82.compute-1.amazonaws.com Synchronizing Cookbooks:[0m
+ec2-54-152-81-82.compute-1.amazonaws.com   - learn_chef_apache2 (0.3.0)[0m
+ec2-54-152-81-82.compute-1.amazonaws.com Installing Cookbook Gems:[0m
+ec2-54-152-81-82.compute-1.amazonaws.com Compiling Cookbooks...[0m
+ec2-54-152-81-82.compute-1.amazonaws.com Converging 4 resources[0m
+ec2-54-152-81-82.compute-1.amazonaws.com Recipe: learn_chef_apache2::default[0m
+ec2-54-152-81-82.compute-1.amazonaws.com   * apt_update[Update the apt cache daily] action periodic
+ec2-54-152-81-82.compute-1.amazonaws.com     [32m- update new lists of packages[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     * directory[/var/lib/apt/periodic] action create (up to date)
+ec2-54-152-81-82.compute-1.amazonaws.com     * directory[/etc/apt/apt.conf.d] action create (up to date)
+ec2-54-152-81-82.compute-1.amazonaws.com     * file[/etc/apt/apt.conf.d/15update-stamp] action create_if_missing (up to date)
+ec2-54-152-81-82.compute-1.amazonaws.com     * execute[apt-get -q update] action run
+ec2-54-152-81-82.compute-1.amazonaws.com       [32m- execute apt-get -q update[0m
+ec2-54-152-81-82.compute-1.amazonaws.com [0m  
+ec2-54-152-81-82.compute-1.amazonaws.com [0m  * apt_package[apache2] action install
+ec2-54-152-81-82.compute-1.amazonaws.com     [32m- install version 2.4.7-1ubuntu4.9 of package apache2[0m
+ec2-54-152-81-82.compute-1.amazonaws.com [0m  * service[apache2] action enable (up to date)
+ec2-54-152-81-82.compute-1.amazonaws.com   * service[apache2] action start (up to date)
+ec2-54-152-81-82.compute-1.amazonaws.com   * template[/var/www/html/index.html] action create
+ec2-54-152-81-82.compute-1.amazonaws.com     [32m- update content in file /var/www/html/index.html from 538f31 to bea7bc[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m--- /var/www/html/index.html	2016-06-16 16:33:09.249284999 +0000[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+++ /var/www/html/.chef-index.html20160616-1416-1tgh81a	2016-06-16 16:33:12.931124999 +0000[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m@@ -1,379 +1,33 @@[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-<html xmlns="http://www.w3.org/1999/xhtml">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  <!--[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    Modified from the Debian original for Ubuntu[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    Last updated: 2014-03-19[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    See: https://launchpad.net/bugs/1288690[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  -->[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  <head>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    <title>Apache2 Ubuntu Default Page: It works</title>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    <style type="text/css" media="screen">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  * {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin: 0px 0px 0px 0px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    padding: 0px 0px 0px 0px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  body, html {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    padding: 3px 3px 3px 3px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #D8DBE2;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    font-family: Verdana, sans-serif;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    font-size: 11pt;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    text-align: center;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.main_page {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    position: relative;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    display: table;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    width: 800px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin-bottom: 3px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin-left: auto;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin-right: auto;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    padding: 0px 0px 0px 0px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    border-width: 2px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    border-color: #212738;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    border-style: solid;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #FFFFFF;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    text-align: center;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.page_header {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    height: 99px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    width: 100%;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #F5F6F7;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.page_header span {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin: 15px 0px 0px 50px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    font-size: 180%;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    font-weight: bold;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.page_header img {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin: 3px 0px 0px 40px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    border: 0px 0px 0px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.table_of_contents {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    clear: left;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    min-width: 200px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin: 3px 3px 3px 3px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #FFFFFF;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    text-align: left;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.table_of_contents_item {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    clear: left;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    width: 100%;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin: 4px 0px 0px 0px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #FFFFFF;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    color: #000000;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    text-align: left;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin: 6px 0px 0px 6px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.content_section {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin: 3px 3px 3px 3px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #FFFFFF;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    text-align: left;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.content_section_text {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    padding: 4px 8px 4px 8px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    color: #000000;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    font-size: 100%;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.content_section_text pre {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin: 8px 0px 8px 0px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    padding: 8px 8px 8px 8px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    border-width: 1px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    border-style: dotted;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    border-color: #000000;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #F5F6F7;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    font-style: italic;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.content_section_text p {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    margin-bottom: 6px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.content_section_text ul, div.content_section_text li {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    padding: 4px 8px 4px 16px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.section_header {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    padding: 3px 6px 3px 6px;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #8E9CB2;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    color: #FFFFFF;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    font-weight: bold;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    font-size: 112%;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    text-align: center;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.section_header_red {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #CD214F;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.section_header_grey {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #9F9386;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  .floating_element {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    position: relative;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    float: left;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.content_section_text a {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    text-decoration: none;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    font-weight: bold;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a:link,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a:visited,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a:active {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    color: #000000;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.table_of_contents_item a:hover {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #000000;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    color: #FFFFFF;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.content_section_text a:link,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.content_section_text a:visited,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-   div.content_section_text a:active {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #DCDFE6;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    color: #000000;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.content_section_text a:hover {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    background-color: #000000;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    color: #DCDFE6;[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  div.validator {[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  }[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    </style>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-  </head>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+<html>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m   <body>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    <div class="main_page">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-      <div class="page_header floating_element">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <img src="/icons/ubuntu-logo.png" alt="Ubuntu Logo" class="floating_element"/>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <span class="floating_element">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          Apache2 Ubuntu Default Page[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </span>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-      </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-<!--      <div class="table_of_contents floating_element">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="section_header section_header_grey">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          TABLE OF CONTENTS[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="table_of_contents_item floating_element">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <a href="#about">About</a>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="table_of_contents_item floating_element">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <a href="#changes">Changes</a>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="table_of_contents_item floating_element">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <a href="#scope">Scope</a>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="table_of_contents_item floating_element">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <a href="#files">Config files</a>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-      </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m--->[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-      <div class="content_section floating_element">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <h1>This was initiated via Chef Script</h1>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <h2>Exercise to demo scripting for Citrix interview</h2>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <p>General steps were:</p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <ul>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      <li>Create an EC2 Chef Server instance and connect to it via web UI and SSH (needed to validate node name)</li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      <li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+        Configure server with an initial organization called david[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      </li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      <li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+        Download Starter kit from Chef Server which contains AWS connectivity parameters.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      </li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      <li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+        Configure workstation (my laptop) with Chef tools. Configure knife.rb file with updated DNS name. Validated connectivity to server via knife client list[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      </li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      <li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+        Configured initial recipe to do apt-get update daily, install apache, and load this template[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      </li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      <li>Phase 1 of exercise (Chef server and script): June 13, 2016</li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+      <li>Phase 2 of exercise (Full automation with bash script and AWS CLI): June 16, 2016</li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    </ul>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m [0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="section_header section_header_red">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <div id="about"></div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          It works![0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="content_section_text">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                This is the default welcome page used to test the correct [0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                operation of the Apache2 server after installation on Ubuntu systems.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                It is based on the equivalent page on Debian, from which the Ubuntu Apache[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                packaging is derived.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                If you can read this page, it means that the Apache HTTP server installed at[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                this site is working properly. You should <b>replace this file</b> (located at[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                If you are a normal user of this web site and don't know what this page is[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                about, this probably means that the site is currently unavailable due to[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                maintenance.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                If the problem persists, please contact the site's administrator.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="section_header">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <div id="changes"></div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                Configuration Overview[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="content_section_text">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                Ubuntu's Apache2 default configuration is different from the[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                upstream default configuration, and split into several files optimized for[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                interaction with Ubuntu tools. The configuration system is[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                <b>fully documented in[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                documentation. Documentation for the web server itself can be[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                found by accessing the <a href="/manual">manual</a> if the <tt>apache2-doc</tt>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                package was installed on this server.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                The configuration layout for an Apache2 web server installation on Ubuntu systems is as follows:[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <pre>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-/etc/apache2/[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-|-- apache2.conf[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-|       `--  ports.conf[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-|-- mods-enabled[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-|       |-- *.load[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-|       `-- *.conf[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-|-- conf-enabled[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-|       `-- *.conf[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-|-- sites-enabled[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-|       `-- *.conf[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          </pre>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <ul>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           <tt>apache2.conf</tt> is the main configuration[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           file. It puts the pieces together by including all remaining configuration[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           files when starting up the web server.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           <tt>ports.conf</tt> is always included from the[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           main configuration file. It is used to determine the listening ports for[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           incoming connections, and this file can be customized anytime.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           Configuration files in the <tt>mods-enabled/</tt>,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           particular configuration snippets which manage modules, global configuration[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           fragments, or virtual host configurations, respectively.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           They are activated by symlinking available[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           configuration files from their respective[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           *-available/ counterparts. These should be managed[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           by using our helpers[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           <tt>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enmod">a2enmod</a>,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dismod">a2dismod</a>,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           </tt>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           <tt>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2ensite">a2ensite</a>,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dissite">a2dissite</a>,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                            </tt>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                                and[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           <tt>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enconf">a2enconf</a>,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2disconf">a2disconf</a>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           </tt>. See their respective man pages for detailed information.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        <li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           The binary is called apache2. Due to the use of[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           environment variables, in the default configuration, apache2 needs to be[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           <b>Calling <tt>/usr/bin/apache2</tt> directly will not work</b> with the[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                           default configuration.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                        </li>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          </ul>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="section_header">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-            <div id="docroot"></div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                Document Roots[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="content_section_text">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-            <p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                By default, Ubuntu does not allow access through the web browser to[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                <em>any</em> file apart of those located in <tt>/var/www</tt>,[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                <a href="http://httpd.apache.org/docs/2.4/mod/mod_userdir.html">public_html</a>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                directories (when enabled) and <tt>/usr/share</tt> (for web[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                applications). If your site is using a web document root[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                document root directory in <tt>/etc/apache2/apache2.conf</tt>.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-            </p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-            <p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                The default Ubuntu document root is <tt>/var/www/html</tt>. You[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                can make your own virtual hosts under /var/www. This is different[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                to previous releases which provides better security out of the box.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-            </p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="section_header">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <div id="bugs"></div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                Reporting Problems[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        <div class="content_section_text">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                Please use the <tt>ubuntu-bug</tt> tool to report bugs in the[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                Apache2 package with Ubuntu. However, check <a[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                href="https://bugs.launchpad.net/ubuntu/+source/apache2">existing[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                bug reports</a> before reporting a new bug.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          <p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                Please report bugs specific to modules (such as PHP and others)[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-                to respective packages, not to the web server itself.[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-          </p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-        </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-      </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    <div class="validator">[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    <p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-      <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    </p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-    </div>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <p>Note: if viewing via load-balancer DNS, reload page to confirm values below change.</p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <h2>Node-Specific Attributes</h2>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <p>Platform: ubuntu</p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <p>Platform version: 14.04</p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <p>Host Name: ip-10-0-1-210</p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <p>IP Address: 10.0.1.210</p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m+    <p>Domain name: ip-10-0-1-210.ec2.internal</p>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m   </body>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m </html>[0m
+ec2-54-152-81-82.compute-1.amazonaws.com     [37m-[0m
+ec2-54-152-81-82.compute-1.amazonaws.com [0m[0m
+ec2-54-152-81-82.compute-1.amazonaws.com Running handlers:[0m
+ec2-54-152-81-82.compute-1.amazonaws.com Running handlers complete
+ec2-54-152-81-82.compute-1.amazonaws.com [0mChef Client finished, 4/9 resources updated in 18 seconds[0m
+Navigate to Load balancer DNS to test: dk-load-balancer-1815739007.us-east-1.elb.amazonaws.com
+
+**** Script ended normally. Goodbye. ****

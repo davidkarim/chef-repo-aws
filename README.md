@@ -25,11 +25,17 @@ The infrastructure that was deployed with this exercise is live at: http://dk-lo
 
 Note: when visiting the link above, you'll be connected to the elastic load balancer. Reloading the page will show node-specific attributes for each server, thus validating load balancer is distributing load across the two servers.
 
-Tail end of results of `knife bootstrap` command:
+Infrastructure design diagram showing the infrastructure that was created:
+![infrastructure drawing](images/infrastructure.png)
+
+Tail end of results of `knife bootstrap` command I ran initially. This command is now part of AWS script:
 ![First Image](images/chef_scr_grab.png)
-Screen grab from Chef Server showing that node has been bootstrapped; this node is an Ubuntu EC2 instance separate from Chef Server instance:
+
+Screen grab from Chef Server showing that nodes have been bootstrapped. I configured two nodes on the script; they are Ubuntu EC2 instances separate from Chef Server instance:
 ![Second Image](images/node_scr_grab.png)
+
 Screen grab of Chef Server showing that the recipe has been configured and uploaded to the Chef server:
 ![Third Image](images/policy_scr_grab.png)
-Screen grab showing successful recipe deployment:
+
+Screen grab showing successful recipe deployments:
 ![Fourth Image](images/report_scr_grab.png)
