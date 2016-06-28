@@ -1,6 +1,6 @@
 Chef-Repo Exercise on AWS
 ===============
-This is an exercise to demo Chef scripting for my interview. The list of requirements before starting:
+This is an exercise to demo Chef scripting abilities. The list of requirements before starting:
 
 * Development environment with Ruby, AWS CLI tools, Chef SDK
 * AWS account with properly configured IAM settings (AWS Marketplace_full_access role), publicly accessible VPC, and EC2 policies.
