@@ -21,9 +21,9 @@ In summary, the steps were:
 * Phase 1 of exercise (Chef server and script): June 13, 2016
 * Phase 2 of exercise (Full automation with bash script and AWS CLI): June 16, 2016
 
-The infrastructure that was deployed with this exercise is live at: http://dk-load-balancer-1815739007.us-east-1.elb.amazonaws.com/
+The infrastructure that was deployed with this exercise was made live, and then taken down to cut AWS costs.
 
-Note: when visiting the link above, you'll be connected to the elastic load balancer. Reloading the page will show node-specific attributes for each server, thus validating load balancer is distributing load across the two servers.
+Note: when visiting the link above (link taken down), you'll be connected to the elastic load balancer. Reloading the page will show node-specific attributes for each server, thus validating load balancer is distributing load across the two servers.
 
 Infrastructure design diagram showing the infrastructure that was created:
 ![infrastructure drawing](images/infrastructure.png)
